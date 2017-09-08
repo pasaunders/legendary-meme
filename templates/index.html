@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Great Number Game</h1>    
+    <p>Guess my number. It's between 1 and 100</p>
+    <p> {{ hint }} </p>
+    <form action="/answer" method="post">
+        {% if not right %}
+            <input type="text" name="guess">
+            <input type="submit" value="submit">
+        {% else %}
+            <input type="submit" value="Play Again" name="restart">
+        {% endif %}
+    </form>
+</body>
+</html>
