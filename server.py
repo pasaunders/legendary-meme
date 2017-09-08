@@ -1,5 +1,5 @@
 from random import randint
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, request, session, url_for
 
 
 app = Flask(__name__)
@@ -15,7 +15,6 @@ def index():
 
 @app.route('/answer', methods=['POST'])
 def answer():
-    # import pdb; pdb.set_trace()
     if 'restart' in request.form:
         session.pop('target')
         return redirect(url_for('index'))
